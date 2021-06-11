@@ -13,6 +13,36 @@ For details of the installation and the usage,
 see the ModiaResult [documentation](https://modiasim.github.io/ModiaResult.jl/stable/index.html).
 
 
+## Example
+
+Once a result data structure `result` with signals `sigA(t), sigB(t), sigC(t), r[3](t)`
+is available and `PyPlot` selected for plotting, 
+
+```julia
+import ModiaResult
+using  Unitful
+
+# Define plotting software globally
+ModiaResult.activate("PyPlot") # or ENV["MODIA_PLOT"] = "PyPlot"
+
+# Define result data structure
+...
+                
+# Generate "using ModiaPlot_PyPlot"                              
+ModiaResult.@usingModiaPlot
+```
+
+then the following command
+
+```julia
+plot(result, [("sigA", "sigB", "sigC"), "r[2:3]"])
+```
+
+generates the following image (labels are automatically constructed):
+
+![SegmentedSignalsPlot](docs/resources/images/segmented-signals-plot.png)
+
+
 ## Main developer
 
 [Martin Otter](https://rmc.dlr.de/sr/en/staff/martin.otter/),
