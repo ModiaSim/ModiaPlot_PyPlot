@@ -5,12 +5,14 @@
 
 ModiaPlot_PyPlot is part of [ModiaSim](https://modiasim.github.io/docs/)
 and provides convenient line plots of simulation results with package
-[PyPlot](https://github.com/JuliaPy/PyPlot.jl).
+[PyPlot](https://github.com/JuliaPy/PyPlot.jl) which is a
+Julia interface to the [Matplotlib](http://matplotlib.org/) plotting library 
+from Python, and specifically to the `matplotlib.pyplot` module.
 
-The package is typially not directly used, but is activated via package
+ModiaPlot_PyPlot is typically not directly used, but is activated via package
 [ModiaResult](https://github.com/ModiaSim/ModiaResult.jl).
 For details of the installation and the usage, 
-see the ModiaResult [documentation](https://modiasim.github.io/ModiaResult.jl/stable/index.html).
+see the [ModiaResult documentation](https://modiasim.github.io/ModiaResult.jl/stable/index.html).
 
 
 ## Example
@@ -20,15 +22,14 @@ is available and `PyPlot` selected for plotting,
 
 ```julia
 import ModiaResult
-using  Unitful
 
 # Define plotting software globally
 ModiaResult.activate("PyPlot") # or ENV["MODIA_PLOT"] = "PyPlot"
 
-# Define result data structure
+# Define result data structure (or generate from simulation engine)
 ...
                 
-# Generate "using ModiaPlot_PyPlot"                              
+# Execute "using ModiaPlot_PyPlot"                              
 ModiaResult.@usingModiaPlot
 ```
 
@@ -38,7 +39,7 @@ then the following command
 plot(result, [("sigA", "sigB", "sigC"), "r[2:3]"])
 ```
 
-generates the following image (labels are automatically constructed):
+generates the following image (layout and legends are automatically constructed):
 
 ![SegmentedSignalsPlot](docs/resources/images/segmented-signals-plot.png)
 
