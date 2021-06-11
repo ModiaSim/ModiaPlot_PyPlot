@@ -5,9 +5,9 @@
 
 ModiaPlot_PyPlot is part of [ModiaSim](https://modiasim.github.io/docs/)
 and provides convenient line plots of simulation results with package
-[PyPlot](https://github.com/JuliaPy/PyPlot.jl) which is a
+[PyPlot](https://github.com/JuliaPy/PyPlot.jl) (= a
 Julia interface to the [Matplotlib](http://matplotlib.org/) plotting library 
-from Python, and specifically to the `matplotlib.pyplot` module.
+from Python, and specifically to the `matplotlib.pyplot` module).
 
 ModiaPlot_PyPlot is typically not directly used, but is activated via package
 [ModiaResult](https://github.com/ModiaSim/ModiaResult.jl).
