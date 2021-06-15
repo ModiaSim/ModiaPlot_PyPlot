@@ -3,7 +3,7 @@ module Runtests
 import ModiaResult
 
 ModiaResult.activate("PyPlot")
-include("$(ModiaResult.path)/test_plot/all_tests.jl")
-ModiaResult.activatePreviousPlotPackage()
+include("$(ModiaResult.path)/test/runtests_withPlot.jl")
+ModiaResult.activatePrevious()
 
 end

@@ -25,7 +25,7 @@ set_matplotlib_rcParams!(args...) =
    merge!(PyCall.PyDict(PyPlot.matplotlib["rcParams"]), Dict(args...))
 
 
-include("$(ModiaResult.path)/src_plot/plot.jl")
+include("$(ModiaResult.path)/src/plot.jl")
 
 
 function plotOneSignal(xsig, ysig, ysigType, label, MonteCarloAsArea)
