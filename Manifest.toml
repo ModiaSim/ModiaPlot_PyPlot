@@ -254,6 +254,12 @@ version = "0.4.5"
 [[Mmap]]
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
+[[ModiaResult]]
+deps = ["DataFrames", "DataStructures", "Measurements", "MonteCarloMeasurements", "Pkg", "Tables", "Unitful"]
+git-tree-sha1 = "30491bd7ffc12a2e32077a6932dbb013ddbd6539"
+uuid = "16a87621-1533-42f6-8e19-4a825980cec2"
+version = "0.2.0"
+
 [[MonteCarloMeasurements]]
 deps = ["Distributed", "Distributions", "LinearAlgebra", "MacroTools", "Random", "RecipesBase", "Requires", "SLEEFPirates", "StaticArrays", "Statistics", "StatsBase", "Test"]
 git-tree-sha1 = "cdc1eb7c5a1154c15dfe7368f1ca1f693dc40202"
