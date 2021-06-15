@@ -21,6 +21,10 @@ using  Unitful
 import PyCall
 import PyPlot
 
+export plot, showFigure, saveFigure, closeFigure, closeAllFigures
+export resultInfo, showResultInfo
+
+
 set_matplotlib_rcParams!(args...) = 
    merge!(PyCall.PyDict(PyPlot.matplotlib["rcParams"]), Dict(args...))
 
