@@ -29,9 +29,9 @@ version = "0.9.7"
 
 [[ChainRulesCore]]
 deps = ["Compat", "LinearAlgebra", "SparseArrays"]
-git-tree-sha1 = "d659e42240c2162300b321f05173cab5cc40a5ba"
+git-tree-sha1 = "4289a76df5a8568cca9970e54dd585c6c395c496"
 uuid = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-version = "0.10.4"
+version = "0.10.7"
 
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -108,9 +108,9 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[Distributions]]
 deps = ["FillArrays", "LinearAlgebra", "PDMats", "Printf", "QuadGK", "Random", "SparseArrays", "SpecialFunctions", "Statistics", "StatsBase", "StatsFuns"]
-git-tree-sha1 = "013020ec9a5cdf1dd454eba3704dbffa69d3047e"
+git-tree-sha1 = "62e1ac52e9adf4234285cd88c94954924aa3f9ef"
 uuid = "31c24e10-a181-5473-b8eb-7969acd0382f"
-version = "0.25.3"
+version = "0.25.5"
 
 [[DocStringExtensions]]
 deps = ["LibGit2"]
@@ -256,9 +256,9 @@ uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[ModiaResult]]
 deps = ["DataFrames", "DataStructures", "Measurements", "MonteCarloMeasurements", "Pkg", "Tables", "Unitful"]
-git-tree-sha1 = "30491bd7ffc12a2e32077a6932dbb013ddbd6539"
+git-tree-sha1 = "2f6510557e48659a43169f916a9406c6bf8ed287"
 uuid = "16a87621-1533-42f6-8e19-4a825980cec2"
-version = "0.2.0"
+version = "0.3.0"
 
 [[MonteCarloMeasurements]]
 deps = ["Distributed", "Distributions", "LinearAlgebra", "MacroTools", "Random", "RecipesBase", "Requires", "SLEEFPirates", "StaticArrays", "Statistics", "StatsBase", "Test"]
@@ -418,9 +418,9 @@ version = "0.2.5"
 
 [[StaticArrays]]
 deps = ["LinearAlgebra", "Random", "Statistics"]
-git-tree-sha1 = "42378d3bab8b4f57aa1ca443821b752850592668"
+git-tree-sha1 = "57a9b3c69933e15e5b7041b6a57d1533ef1a9882"
 uuid = "90137ffa-7385-5640-81b9-e52037218182"
-version = "1.2.2"
+version = "1.2.3"
 
 [[Statistics]]
 deps = ["LinearAlgebra", "SparseArrays"]
@@ -492,9 +492,9 @@ version = "1.8.0"
 
 [[VectorizationBase]]
 deps = ["ArrayInterface", "Hwloc", "IfElse", "Libdl", "LinearAlgebra", "Static"]
-git-tree-sha1 = "7c8974c7de377a2dc67e778017c78f96fc8f0fc6"
+git-tree-sha1 = "b4d183e50e32f35132aec8586a6e4822af2e8e75"
 uuid = "3d5dd08c-fd9d-11e8-17fa-ed2836048c2f"
-version = "0.20.16"
+version = "0.20.17"
 
 [[VersionParsing]]
 git-tree-sha1 = "80229be1f670524750d905f8fc8148e5a8c4537f"
