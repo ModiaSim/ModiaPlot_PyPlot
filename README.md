@@ -22,7 +22,7 @@ Once a result data structure `result` with signals `sigA(t), sigB(t), sigC(t), r
 ```julia
  # │ name  unit    nTime  signalType  valueSize  eltype          
 ───┼─────────────────────────────────────────────────────────────
- 1 │ time          2      TimeSignal  ()         Float64
+ 1 │ time          2      Independent ()         Float64
  2 │ sigA  m       88     Continuous  ()         Float64
  3 │ sigB  m s^-1  151    Continuous  ()         Float64
  4 │ sigC  m N     16     Clocked     ()         Float64
@@ -35,7 +35,7 @@ is available and `PyPlot` selected for plotting,
 import ModiaResult
 
 # Define plotting software globally
-ModiaResult.activate("PyPlot") # or ENV["MODIA_PLOT"] = "PyPlot"
+ModiaResult.usePlotPackage("PyPlot") # or ENV["MODIA_PLOT"] = "PyPlot"
                 
 # Execute "using ModiaPlot_PyPlot"                              
 ModiaResult.@usingModiaPlot
