@@ -16,6 +16,10 @@ module ModiaPlot_PyPlot
 import ModiaResult
 import Measurements
 import MonteCarloMeasurements
+
+# Determine whether pmean, pmaximum, pminimum is available (MonteCarlMeasurements, version >= 1.0)
+const pfunctionsDefined = isdefined(MonteCarloMeasurements, :pmean) 
+        
 using  Unitful
 
 import PyCall
@@ -52,8 +56,15 @@ function plotOneSignal(xsig, ysig, ysigType, label, MonteCarloAsArea)
     elseif typeof(ysig2[1]) <: MonteCarloMeasurements.StaticParticles ||
            typeof(ysig2[1]) <: MonteCarloMeasurements.Particles
 		# Plot mean value signal
-		xsig_mean = MonteCarloMeasurements.mean.(xsig2)
-		ysig_mean = MonteCarloMeasurements.mean.(ysig2)
+        if pfunctionsDefined
+            # MonteCarlMeasurements, version >= 1.0
+            xsig_mean = MonteCarloMeasurements.pmean.(xsig2)
+            ysig_mean = MonteCarloMeasurements.pmean.(ysig2)
+        else
+            # MonteCarloMeasurements, version < 1.0
+            xsig_mean = MonteCarloMeasurements.mean.(xsig2)
+            ysig_mean = MonteCarloMeasurements.mean.(ysig2)            
+        end
         xsig_mean = ustrip.(xsig_mean)
         ysig_mean = ustrip.(ysig_mean)
 		curve = PyPlot.plot(xsig_mean, ysig_mean, label=label)
@@ -63,8 +74,15 @@ function plotOneSignal(xsig, ysig, ysigType, label, MonteCarloAsArea)
         if MonteCarloAsArea
             # Plot area of uncertainty around mean value signal (use the same color, but transparent)
     		rgba2 = (rgba[1], rgba[2], rgba[3], 0.2)
-    		ysig_max = MonteCarloMeasurements.maximum.(ysig2)
-	    	ysig_min = MonteCarloMeasurements.minimum.(ysig2)
+            if pfunctionsDefined
+                # MonteCarlMeasurements, version >= 1.0          
+                ysig_max = MonteCarloMeasurements.pmaximum.(ysig2)
+                ysig_min = MonteCarloMeasurements.pminimum.(ysig2)
+            else
+                # MonteCarloMeasurements, version < 1.0
+                ysig_max = MonteCarloMeasurements.maximum.(ysig2)
+                ysig_min = MonteCarloMeasurements.minimum.(ysig2)                
+            end
             ysig_max = ustrip.(ysig_max)
             ysig_min = ustrip.(ysig_min)
     		PyPlot.fill_between(xsig_mean, ysig_min, ysig_max, color=rgba2)
@@ -87,7 +105,13 @@ function plotOneSignal(xsig, ysig, ysigType, label, MonteCarloAsArea)
             xsig2 = Measurements.value.(xsig2)
         elseif typeof(xsig2[1]) <: MonteCarloMeasurements.StaticParticles ||
                typeof(xsig2[1]) <: MonteCarloMeasurements.Particles
-            xsig2 = MonteCarloMeasurements.mean.(xsig2)
+            if pfunctionsDefined
+                # MonteCarlMeasurements, version >= 1.0  
+                xsig2 = MonteCarloMeasurements.pmean.(xsig2)
+            else
+                # MonteCarlMeasurements, version < 1.0  
+                xsig2 = MonteCarloMeasurements.mean.(xsig2)            
+            end
             xsig2 = ustrip.(xsig2)
         end
         if ysigType == ModiaResult.Continuous
