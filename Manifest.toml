@@ -316,9 +316,9 @@ uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[deps.ModiaResult]]
 deps = ["DataFrames", "Measurements", "MonteCarloMeasurements", "OrderedCollections", "Pkg", "Tables", "Unitful"]
-git-tree-sha1 = "873662063386e6c31cdf554ecf0a5458fc718805"
+git-tree-sha1 = "8fc8801bf89b9f2efd39952386bda67b3724b0f3"
 uuid = "16a87621-1533-42f6-8e19-4a825980cec2"
-version = "0.4.0"
+version = "0.4.1"
 
 [[deps.MonteCarloMeasurements]]
 deps = ["Distributed", "Distributions", "LinearAlgebra", "MacroTools", "Random", "RecipesBase", "Requires", "SLEEFPirates", "StaticArrays", "Statistics", "StatsBase", "Test"]
